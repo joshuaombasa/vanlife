@@ -12,7 +12,8 @@ export default function HostLayout() {
         <div className="host--layout--container">
             <nav>
                 <NavLink 
-                    to="dashboard"
+                    end
+                    to="."
                     style={({isActive}) => isActive ? activeStyles : null}
                 >Dashboard</NavLink>
                 <NavLink 
