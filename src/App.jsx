@@ -11,6 +11,10 @@ import HostDashBoard from './pages/host/HostDashBoard'
 import HostIncome from './pages/host/HostIncome'
 import HostReviews from './pages/host/HostReviews'
 import HostVans from './pages/host/HostVans'
+import HostVanDetails from './pages/host/HostVanDetails'
+import HostVanPhotos from './components/HostVanPhotos'
+import HostVanPricing from './components/HostVanPricing'
+import HostVanIdDetails from './components/HostVanIdDetails'
 
 function App() {
   
@@ -24,10 +28,15 @@ function App() {
              <Route path='vans' element={<Vans/>}/>
              <Route path='vans/:id' element={<VanDetails/>}/>
              <Route path='host' element={<Host/>}>
-                  <Route path='dashboard' element={<HostDashBoard/>}/>
+                  <Route index element={<HostDashBoard/>}/>
                   <Route path='income' element={<HostIncome/>}/>
                   <Route path='reviews' element={<HostReviews/>}/>
                   <Route path='vans' element={<HostVans/>}/>
+                  <Route path='vans/:id' element={<HostVanDetails/>}>
+                       <Route index element={<HostVanIdDetails/>}/>
+                       <Route path='pricing' element={<HostVanPricing/>}/>
+                       <Route path='photos' element={<HostVanPhotos/>}/>
+                  </Route>
              </Route>
         </Route>
       </Routes>
