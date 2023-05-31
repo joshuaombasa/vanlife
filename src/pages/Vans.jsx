@@ -22,7 +22,6 @@ export default function Vans() {
     }
 
 
-
     return (
         <div className="main--vans--container">
             <VansLayout />
