@@ -26,7 +26,6 @@ export default function VanDetails() {
         }
     }
 
-
     return (
         currentVan ?
             <div className="van--details--container">
