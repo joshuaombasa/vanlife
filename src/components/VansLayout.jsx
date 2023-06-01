@@ -8,10 +8,26 @@ export default function VansLayout() {
             <h1>Explore our van options</h1>
             <nav>
                 <ul>
-                    <li className="vans--filter--buttons"><Link to="">Simple</Link></li>
-                    <li className="vans--filter--buttons"><Link to="">Luxury</Link></li>
-                    <li className="vans--filter--buttons"><Link to="">Rugged</Link></li>
-                    <li className="clear--filters--link"><Link to="">Clear filters</Link></li>
+                    <li 
+                       className="vans--filter--buttons">
+                        <Link 
+                           to="?type=simple"
+                           >Simple</Link></li>
+                    <li 
+                       className="vans--filter--buttons">
+                        <Link 
+                           to="?type=luxury"
+                           >Luxury</Link></li>
+                    <li 
+                       className="vans--filter--buttons">
+                        <Link 
+                           to="?type=rugged"
+                           >Rugged</Link></li>
+                    <li 
+                       className="clear--filters--link">
+                        <Link 
+                           to=""
+                           >Clear filters</Link></li>
                 </ul>
             </nav>
         </div>
