@@ -3,14 +3,11 @@ body {
   margin: 0;
 }
 
-.main--layout {}
-
 .header--container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-
   background: #FFF7ED;
 }
 
@@ -22,7 +19,7 @@ body {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 35px;
   line-height: 23px;
   text-align: right;
   color: #4D4D4D;
@@ -43,7 +40,7 @@ body {
 
 .logo a {
   color: #000000;
-  font-size: 25px;
+  font-size: 35px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
@@ -83,13 +80,13 @@ footer {
 .main--container h1 {
   margin: auto;
   margin-bottom: 40px;
-  width: 494.33px;
+  width: 700px;
   height: 84px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 45px;
-  line-height: 42px;
+  line-height: 50px;
   color: #FFFFFF;
 }
 
@@ -97,20 +94,20 @@ footer {
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
-  width: 494.33px;
+  width: 700px;
   height: 48px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 30px;
   color: #FFFFFF;
 }
 
 .find--van--homepage-link {
   margin: auto;
   margin-top: 40px;
-  width: 600px;
+  width: 700px;
   padding: 15px;
   background: #FF8C38;
   border-radius: 5px;
@@ -137,44 +134,44 @@ footer {
 
 .about--container img {
   width: 100%;
-  height: 300px;
+  height: 600px;
 }
 
 .about--container h1 {
   margin: auto;
-  width: 494.33px;
+  width: 600px;
   margin-bottom: 20px;
   height: 76px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
-  line-height: 38px;
+  line-height: 50px;
   color: #161616;
 }
 
 .about--container h4 {
   margin: auto;
-  width: 494px;
+  width: 600px;
   height: 154px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 35px;
   color: #161616;
 }
 
 .about--bottom--section {
-  margin: 10px auto;
+  margin: 80px auto;
   background: #FFCC8D;
   border-radius: 5px;
-  width: 500px;
+  width: 600px;
   padding: 20px;
 }
 
 .about--bottom--section h2 {
-  width: 420px;
+  width: 600px;
   height: 60px;
   font-family: 'Inter';
   font-style: normal;
@@ -412,6 +409,21 @@ footer {
   border-radius: 5px;
 }
 
+.host--layout--container {
+  padding: 20px;
+  background: #FFF7ED;
+}
+
+.listen--vans--title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 34px;
+  color: #161616;
+  padding: 20px 0;
+}
+
 .host--layout--container nav a {
   text-decoration-line: none;
   width: 200px;
@@ -419,7 +431,7 @@ footer {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 27px;
   line-height: 24px;
   text-align: center;
   color: #4D4D4D;
@@ -428,5 +440,210 @@ footer {
 }
 
 .host--content {
-  height: 70vh;
+  min-height: 80vh;
+  background: #FFF7ED;
+  padding: 20px;
 }
+
+.host--vans--container a {
+  text-decoration: none;
+}
+
+.host--van--container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 700px;
+  height: 350px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  margin: 30px;
+  padding: 40px;
+}
+
+.host--van--container img {
+  width: 400px;
+  height: 300px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.host--van--container h2 {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  color: #161616;
+}
+
+.host--van--container h3 {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  color: #4D4D4D;
+}
+
+.host--van--text {
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.host--van--details--page {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  padding: 40px;
+}
+
+.selected--host--van--container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  padding: 40px;
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.selected--host--van--container img {
+  width: 400px;
+  border-radius: 5px;
+}
+
+.selected--host--van--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selected--host--van--info p {
+  width: 100px;
+  height: 24px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFEAD0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.selected--host--van--info h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 27px;
+  color: #161616;
+}
+
+.selected--host--van--info h3 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26.0583px;
+  line-height: 27px;
+  color: #161616;
+}
+
+.selected--host--van--info span {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16.2864px;
+  line-height: 36px;
+  color: #161616;
+}
+
+.host--nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.host--nav a {
+  text-decoration-line: none;
+  width: 200px;
+  height: 24px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 24px;
+  text-align: center;
+  color: #4D4D4D;
+  border-radius: 5px;
+  padding: 33px;
+  margin-right: 50px;
+}
+
+.host--selected--van--details--price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #161616;
+}
+
+.host--selected--van--details--price span {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #4D4D4D;
+}
+
+.padding-for-host-van-inner-nav-items {
+  padding: 33px;
+}
+
+.host--van--id--photo {
+  width: 300px;
+}
+
+.host--van--id--info h3 {
+  margin: 0;
+  padding: 10px;
+  padding-left: 33px;
+}
+
+.host--van--id--info {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #161616;
+}
+
+.host--van--id--info span {
+  font-weight: 500;
+}
+
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 26px;
+  font-size: 20px;
+} 
