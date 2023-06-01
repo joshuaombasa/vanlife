@@ -12,6 +12,8 @@ export default function Vans() {
 
     const typeFilter = searchParams.get("type")
 
+    console.log(typeFilter)
+
     let filteredVans 
 
     if (typeFilter) {
@@ -19,6 +21,8 @@ export default function Vans() {
     } else {
         filteredVans = vansData
     }
+
+    
 
     React.useEffect(() => {
         fetch("/api/vans")
