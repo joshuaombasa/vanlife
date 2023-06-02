@@ -646,4 +646,35 @@ footer {
   margin-bottom: 30px;
   margin-left: 26px;
   font-size: 20px;
-} 
+}
+
+.not--found--page--container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.not--found--error--title {
+  width: 600px;
+  margin: auto;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 42px;
+  color: #161616;
+  margin-bottom: 0;
+}
+
+.return--home--from--not--found--page {
+  font-family: 'Inter';
+  margin: auto;
+  color: white;
+  padding: 20px;
+  width: 600px;
+  background-color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+}
+
