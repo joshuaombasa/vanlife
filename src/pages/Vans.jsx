@@ -12,7 +12,7 @@ export default function Vans() {
 
     const typeFilter = searchParams.get("type")
 
-    console.log(typeFilter)
+    
 
     let filteredVans 
 
