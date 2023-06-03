@@ -18,8 +18,6 @@ export default function VanDetails() {
 
     const prevFilter = location.state && location.state.search || ""
 
-    // console.log(prevFilter)
-
     let styles
 
     if (currentVan) {
