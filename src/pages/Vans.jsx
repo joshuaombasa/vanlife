@@ -12,7 +12,6 @@ export default function Vans() {
 
     const typeFilter = searchParams.get("type")
 
-    
 
     let filteredVans 
 
