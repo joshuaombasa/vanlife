@@ -45,13 +45,9 @@ export default function Vans() {
     return (
         <div className="main--vans--container">
             <VansLayout />
-            {filteredVans ?
                 <div className="vans--container">
                     {vansList}
                 </div>
-                :
-                <h1>Loading...</h1>
-            }
         </div>
     )
 }
