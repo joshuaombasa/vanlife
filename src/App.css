@@ -678,3 +678,11 @@ footer {
   font-size: 30px;
 }
 
+.error--container {
+  min-height: 80vh;
+  display: flex;
+}
+
+.error--container h1, .error--container pre {
+  margin: auto;
+}
