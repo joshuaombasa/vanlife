@@ -1,33 +1,36 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLoaderData } from "react-router-dom";
 
 import VansLayout from "../components/VansLayout";
 import Van from "../components/Van";
 
+import { getVans } from "../api";
+
+
+export function loader() {
+    return getVans()
+}
+
+
+
 export default function Vans() {
 
-    const [vansData, setVansData] = React.useState(null)
+    const data = useLoaderData()
+
+    const vansData = data.vans
 
     const [searchParams, setSearchParams] = useSearchParams()
 
     const typeFilter = searchParams.get("type")
 
 
-    let filteredVans 
+    let filteredVans
 
     if (typeFilter) {
         filteredVans = vansData.filter(item => item.type === typeFilter)
     } else {
         filteredVans = vansData
     }
-
-    
-
-    React.useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVansData(data.vans))
-    }, [])
 
 
     let vansList
@@ -44,10 +47,10 @@ export default function Vans() {
             <VansLayout />
             {filteredVans ?
                 <div className="vans--container">
-                {vansList}
-            </div>
-            :
-            <h1>Loading...</h1>
+                    {vansList}
+                </div>
+                :
+                <h1>Loading...</h1>
             }
         </div>
     )
