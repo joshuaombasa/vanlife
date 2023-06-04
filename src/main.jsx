@@ -7,9 +7,8 @@ import './index.css'
 import "../server"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
   <React.StrictMode>
     <App />
   </React.StrictMode>
-  </BrowserRouter>,
+ ,
 )
