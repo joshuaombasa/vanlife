@@ -1,20 +1,20 @@
 import React from "react";
-import {Link, useParams, useLocation } from "react-router-dom";
+import {Link, useParams, useLocation, useLoaderData } from "react-router-dom";
+
+import { getVans } from "../api";
+
+export function loader({params}) {
+    console.log(params)
+    return getVans(params.id)
+}
 
 export default function VanDetails() {
-    const { id } = useParams()
-
-    const [currentVan, setCurrentVan] = React.useState(null)
-
-    const location = useLocation()
-
     
+    const data = useLoaderData()
 
-    React.useEffect(() => {
-        fetch(`/api/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setCurrentVan(data.vans))
-    }, [])
+    console.log(data.vans)
+
+    const currentVan = data.vans
 
     const prevFilter = location.state && location.state.search || ""
 
@@ -31,7 +31,6 @@ export default function VanDetails() {
     }
 
     return (
-        currentVan ?
             <>
                 <Link
                     to={`..?type=simple`}
@@ -47,7 +46,5 @@ export default function VanDetails() {
                     <p className="rent-this-van-link">Rent this van</p>
                 </div>
             </>
-            :
-            <h1>Loading...</h1>
     )
 }
