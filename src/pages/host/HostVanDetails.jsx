@@ -1,16 +1,20 @@
 import React from "react";
-import {Link, NavLink, Outlet, useParams } from "react-router-dom";
+import {Link, NavLink, Outlet, useParams, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../api";
+
+export function loader({params}) {
+    console.log(params)
+    return getHostVans(params.id)
+}
+
 export default function HostVanDetails() {
+
+    const data = useLoaderData()
+    console.log(data.vans)
 
     const { id } = useParams()
 
-    const [selectedVan, setSelectedVan] = React.useState(null)
-
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setSelectedVan(data.vans[0]))
-    })
+    const selectedVan = data.vans
 
     let styles
 
@@ -31,8 +35,6 @@ export default function HostVanDetails() {
     }
 
     return (
-        <>
-            {selectedVan ?
                 <>
                 <Link
                         to=".."
@@ -66,9 +68,5 @@ export default function HostVanDetails() {
                     <Outlet context={{ selectedVan: selectedVan }} />
                 </div>
                 </>
-                :
-                <h1>Loading...</h1>
-            }
-        </>
     )
 }
