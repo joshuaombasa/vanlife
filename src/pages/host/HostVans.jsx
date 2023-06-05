@@ -1,17 +1,18 @@
 import React from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 import HostVan from "../../components/HostVan";
+import { getHostVans} from "../../api";
+
+export function loader () {
+    return getHostVans()
+}
 
 export default function HostVans() {
 
-    const [hostVansData, setHostVansData] =  React.useState(null)
+    const data = useLoaderData()
+    console.log(data.vans)
 
-    React.useEffect(() => {
-        fetch("/api/host/vans")
-          .then(res => res.json())
-          .then(data => setHostVansData(data.vans))
-    },[])
-
- 
+    const hostVansData = data.vans
 
     let hostVansList
 
