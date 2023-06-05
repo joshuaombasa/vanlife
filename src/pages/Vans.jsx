@@ -12,7 +12,6 @@ export function loader() {
 }
 
 
-
 export default function Vans() {
 
     const data = useLoaderData()
@@ -40,6 +39,8 @@ export default function Vans() {
             return <Van key={van.id} van={van} />
         })
     }
+
+    // console.log(vansList)
 
 
     return (
