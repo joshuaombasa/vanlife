@@ -4,7 +4,7 @@ import {Link, useParams, useLocation, useLoaderData } from "react-router-dom";
 import { getVans } from "../api";
 
 export function loader({params}) {
-    console.log(params)
+   
     return getVans(params.id)
 }
 
@@ -12,7 +12,7 @@ export default function VanDetails() {
     
     const data = useLoaderData()
 
-    console.log(data.vans)
+    
 
     const currentVan = data.vans
 
