@@ -40,8 +40,6 @@ export default function Vans() {
         })
     }
 
-    // console.log(vansList)
-
 
     return (
         <div className="main--vans--container">
