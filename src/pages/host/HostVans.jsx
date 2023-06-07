@@ -13,16 +13,12 @@ export default function HostVans() {
 
     const data = useLoaderData()
     
-
     const hostVansData = data.vans
 
-    let hostVansList
-
-    if (hostVansData) {
-        hostVansList = hostVansData.map(item => {
+    const hostVansList = hostVansData.map(item => {
             return <HostVan key={item.id} van={item}/>
         })
-    }
+    
 
     return (
         <>
