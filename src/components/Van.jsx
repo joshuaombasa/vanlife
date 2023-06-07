@@ -5,7 +5,6 @@ export default function Van({ van }) {
 
     const [searchParams, setSearchParams] = useSearchParams()
 
-
     let styles
     if (van.type === "simple") {
         styles = { backgroundColor: "#E17654" }
