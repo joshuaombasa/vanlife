@@ -4,7 +4,6 @@ import {Link, useParams, useLocation, useLoaderData } from "react-router-dom";
 import { getVans } from "../api";
 
 export function loader({params}) {
-   
     return getVans(params.id)
 }
 
@@ -16,7 +15,8 @@ export default function VanDetails() {
 
     const currentVan = data.vans
 
-    const prevFilter = location.state && location.state.search || ""
+    // const prevFilter = location.state && location.state.search || ""
+   
 
     let styles
 
