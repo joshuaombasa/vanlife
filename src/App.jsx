@@ -34,15 +34,15 @@ const router = createBrowserRouter(createRoutesFromElements(
              <Route path='about' element={<About/>}/>
              <Route path='vans' element={<Vans/>} loader={vansLoader} errorElement={<Error/>}/>
              <Route path='vans/:id' element={<VanDetails/>} loader={VanDetailsLoader}/>
-             <Route path='host' element={<Host/>} loader={async () => await requireAuth()} >
+             <Route path='host' element={<Host/>} loader={async ({request}) => await requireAuth(request)} >
                   <Route index element={<HostDashBoard/>}  />
-                  <Route path='income' element={<HostIncome/>} loader={async () => await requireAuth()} />
-                  <Route path='reviews' element={<HostReviews/>} loader={async () => await requireAuth()} />
+                  <Route path='income' element={<HostIncome/>} loader={async ({request}) => await requireAuth(request)} />
+                  <Route path='reviews' element={<HostReviews/>} loader={async ({request}) => await requireAuth(request)} />
                   <Route path='vans' element={<HostVans/>} loader={HostVansLoader}/>
                   <Route path='vans/:id' element={<HostVanDetails/>} loader={HostVanIdDetailsLoader}>
-                       <Route index element={<HostVanIdDetails/>} loader={async () => await requireAuth()} />
-                       <Route path='pricing' element={<HostVanPricing/>} loader={async () => await requireAuth()} />
-                       <Route path='photos' element={<HostVanPhotos/>} loader={async () => await requireAuth()} />
+                       <Route index element={<HostVanIdDetails/>} loader={async ({request}) => await requireAuth(request)} />
+                       <Route path='pricing' element={<HostVanPricing/>} loader={async ({request}) => await requireAuth(request)} />
+                       <Route path='photos' element={<HostVanPhotos/>} loader={async ({request}) => await requireAuth(request)} />
                   </Route>
              </Route>
              <Route path='login' element={<Login/>} loader={loginLoader} action={loginAction}/>
@@ -52,8 +52,6 @@ const router = createBrowserRouter(createRoutesFromElements(
 ))
 
 function App() {
-  
-
   return (
     <RouterProvider router={router}/>
   )
