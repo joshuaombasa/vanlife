@@ -33,13 +33,13 @@ const router = createBrowserRouter(createRoutesFromElements(
              <Route index element={<Home/>}/>
              <Route path='about' element={<About/>}/>
              <Route path='vans' element={<Vans/>} loader={vansLoader} errorElement={<Error/>}/>
-             <Route path='vans/:id' element={<VanDetails/>} loader={VanDetailsLoader}/>
+             <Route path='vans/:id' element={<VanDetails/>} loader={VanDetailsLoader} errorElement={<Error/>}/>
              <Route path='host' element={<Host/>} loader={async ({request}) => await requireAuth(request)} >
                   <Route index element={<HostDashBoard/>}  />
                   <Route path='income' element={<HostIncome/>} loader={async ({request}) => await requireAuth(request)} />
                   <Route path='reviews' element={<HostReviews/>} loader={async ({request}) => await requireAuth(request)} />
-                  <Route path='vans' element={<HostVans/>} loader={HostVansLoader}/>
-                  <Route path='vans/:id' element={<HostVanDetails/>} loader={HostVanIdDetailsLoader}>
+                  <Route path='vans' element={<HostVans/>} loader={HostVansLoader} errorElement={<Error/>}/>
+                  <Route path='vans/:id' element={<HostVanDetails/>} loader={HostVanIdDetailsLoader} errorElement={<Error/>}>
                        <Route index element={<HostVanIdDetails/>} loader={async ({request}) => await requireAuth(request)} />
                        <Route path='pricing' element={<HostVanPricing/>} loader={async ({request}) => await requireAuth(request)} />
                        <Route path='photos' element={<HostVanPhotos/>} loader={async ({request}) => await requireAuth(request)} />
