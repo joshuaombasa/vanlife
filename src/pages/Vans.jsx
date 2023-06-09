@@ -8,8 +8,7 @@ import { getVans } from "../api";
 
 
 export function loader() {
-    const vansPromise = getVans()
-    return defer({ vans: vansPromise })
+    return defer({ vans: getVans() })
 }
 
 
@@ -17,63 +16,52 @@ export default function Vans() {
 
     const data = useLoaderData()
 
-    // const vansData = data.vans
 
     const [searchParams, setSearchParams] = useSearchParams()
 
     const typeFilter = searchParams.get("type")
 
 
-    // let filteredVans
 
-    // if (typeFilter) {
-    //     filteredVans = vansData.filter(item => item.type === typeFilter)
-    // } else {
-    //     filteredVans = vansData
-    // }
-
-
-    // let vansList
-
-    // if (filteredVans) {
-    //     vansList = filteredVans.map(van => {
-    //         return <Van key={van.id} van={van} />
-    //     })
-    // }
 
 
     return (
         <div className="main--vans--container">
-            <VansLayout />
-            <Await resolve={data.vans}>
-                {(vans) => {
-                    console.log(vans)
-                    const vansData = vans.vans
-                    let filteredVans
+            <React.Suspense fallback={<h1>Loading...</h1>}>
+                <Await resolve={data.vans}>
+                    {(vansInfo) => {
 
-                    if (typeFilter) {
-                        filteredVans = vansData.filter(item => item.type === typeFilter)
-                    } else {
-                        filteredVans = vansData
-                    }
+                        const vansData = vansInfo.vans
+
+                        let filteredVans
+
+                        if (typeFilter) {
+                            filteredVans = vansData.filter(item => item.type === typeFilter)
+                        } else {
+                            filteredVans = vansData
+                        }
 
 
-                    let vansList
+                        let vansList
 
-                    if (filteredVans) {
-                        vansList = filteredVans.map(van => {
-                            return <Van key={van.id} van={van} />
-                        })
-                    }
+                        if (filteredVans) {
+                            vansList = filteredVans.map(van => {
+                                return <Van key={van.id} van={van} />
+                            })
+                        }
 
-                    return (
-                        <div className="vans--container">
-                            {vansList}
-                        </div>
-                    )
-                }}
-            </Await>
+                        return (
+                            <>
+                                <VansLayout />
+                                <div className="vans--container">
+                                    {vansList}
+                                </div>
+                            </>
+                        )
+                    }}
 
+                </Await>
+            </React.Suspense>
         </div>
     )
 }
