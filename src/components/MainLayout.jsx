@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function MainLayout() {
+
     return (
         <section className="main--layout">
             <Header/>
@@ -12,4 +13,5 @@ export default function MainLayout() {
             <Footer/>
         </section>
     )
+
 }
