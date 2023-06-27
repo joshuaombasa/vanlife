@@ -1,11 +1,11 @@
 import React from 'react'
 import { 
-  Routes, 
-  Route, 
-  createBrowserRouter, 
-  createRoutesFromElements, 
-  RouterProvider 
+          Route, 
+          createBrowserRouter, 
+          createRoutesFromElements, 
+          RouterProvider 
 } from 'react-router-dom'
+
 import './App.css'
 import MainLayout from './components/MainLayout'
 import Home from './pages/Home'
