@@ -2,8 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import HostLayout from "../../components/HostLayout";
 
-
-
 export default function Host() {
 
     
